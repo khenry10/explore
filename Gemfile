@@ -35,7 +35,7 @@ gem "twitter-bootstrap-rails"
 
 gem 'nokogiri'
 gem 'rack', '~>1.1'
-gem 'rspec', :require => 'spec'
+
 
 group :production do 
 gem 'pg'
