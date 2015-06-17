@@ -33102,3 +33102,273 @@ Processing by TodosController#index as HTML
   [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 3]]
   Rendered todos/index.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 50ms (Views: 39.4ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/todos/36" for ::1 at 2015-06-17 17:25:01 -0400
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vzz0HC+bGcZ/JdkWVmMvfoM1sxbzotbwF+WaRMvPkQS2tsuIQ7WBuPjicnA6feqRxRCDu/SYV67hF6te1Oldgw==", "id"=>"36"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 36]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 36]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 11ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:25:01 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 3]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 3]]
+  Rendered todos/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todos/new" for ::1 at 2015-06-17 17:29:15 -0400
+Processing by TodosController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered todos/_form.html.erb (7.2ms)
+  Rendered todos/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 82ms (Views: 64.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-17 17:29:19 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"coympb88MzWtGnUCxm8M9iNlTBQUpOvk/vs00+qB4wV7Bpkx0xKrSyrd3mSqcckZZUB8uROearoICQXJ9acvgg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 88ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-06-17 17:29:19 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-17 17:29:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-17 17:29:20 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BGAN2RkcTLHSaZHXBmRzSwfIs1b6wxLqi9WADlNflbBM2D+LDrc8M63tXMc7T4n4b/gk461KsgJ6QjnKwIB5Qw==", "user"=>{"email"=>"kprift@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "kprift@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-06-17 21:16:56.650789"], ["current_sign_in_at", "2015-06-17 21:29:20.823701"], ["sign_in_count", 18], ["updated_at", "2015-06-17 21:29:20.824991"], ["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 100ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-06-17 17:29:20 -0400
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos"[0m
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 56ms (Views: 45.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/todos/31" for ::1 at 2015-06-17 17:33:53 -0400
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PbT+pxgAYck3wIL7hrVph/Tn7slEiVqIjF+e2RkZf3h3e/pBbgQsEIvrdJtU6QKNBEMq53gKTzyVCUW5MtPZ6w==", "id"=>"31"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 31]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:33:53 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 52.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/todos/14" for ::1 at 2015-06-17 17:38:58 -0400
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bxYbeC+qFUDoTdIy8yjLxTdfBOfUke9c+zR8V72nI7gl2R+eWa5YmVRmJFIhdKDPx/vAyegS+ujiYqc3lm2FKw==", "id"=>"14"}
+  [1m[35mTodo Load (0.2ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 14]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:38:58 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 85ms (Views: 70.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:44:01 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.4ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (79.0ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (undefined method `destroy_todo_path' for #<#<Class:0x007f87e931a330>:0x007f87e45bfa40>):
+    21: 			<td><%= todo.Description %></td>
+    22: 			<td><%= todo.Deadline %></td>
+    23: 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
+    24: 			<%= link_to 'Delete', destroy_todo_path(todo), 
+    25: 				method: :delete, 
+    26: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    27: 
+  app/views/todos/index.html.erb:24:in `block (2 levels) in _app_views_todos_index_html_erb___4151726902205879835_70110814270380'
+  app/views/todos/index.html.erb:16:in `block in _app_views_todos_index_html_erb___4151726902205879835_70110814270380'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4151726902205879835_70110814270380'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (96.9ms)
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:47:20 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.3ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 78ms (Views: 67.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-06-17 17:47:20 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-17 17:47:20 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-17 17:47:20 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-06-17 17:47:20 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-17 17:47:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-17 17:47:20 -0400
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:50:50 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.3ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 64ms (Views: 53.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-06-17 17:50:50 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-17 17:50:50 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-17 17:50:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-17 17:50:50 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-06-17 17:50:51 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-17 17:50:51 -0400
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:51:31 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 59ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-17 17:51:31 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-17 17:51:31 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-17 17:51:31 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-06-17 17:51:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-17 17:51:31 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-06-17 17:51:31 -0400
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:51:42 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.3ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 51ms (Views: 41.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-17 17:51:42 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-17 17:51:42 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-06-17 17:51:42 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-06-17 17:51:42 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-17 17:51:42 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-17 17:51:42 -0400
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:51:44 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.4ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.6ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 111ms (Views: 81.8ms | ActiveRecord: 1.3ms)
