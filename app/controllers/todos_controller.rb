@@ -2,10 +2,19 @@ class TodosController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create]
 
   def index
-    @todo = current_user.todos.all
+    completed_todos_ids = params[:todos_ids]
+    p "COMPLETED TODOS IDS"
+    p completed_todos_ids
+    Todo.complete(completed_todos_ids) 
+    p Todo.all
+    p "CURRENT USER TODOS"
+    p current_user.todos
+    p "CURRENT USER"
+    p current_user
+    @todo = current_user.todos.where(Complete: nil)
+    p "UNCOMPLETED TODOS!!!!"
+    p @todo
 
-    
-  
   end
 
   def new
@@ -38,6 +47,11 @@ class TodosController < ApplicationController
     @todo.destroy
 
     redirect_to todos_path
+  end
+
+  def complete
+    @todo = Todo.find params[:id]
+    Todo.update(:Compelete => "true")
   end
 
   private  
