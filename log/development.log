@@ -33372,3 +33372,24 @@ Processing by TodosController#index as HTML
   [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
   Rendered todos/index.html.erb within layouts/application (3.5ms)
 Completed 200 OK in 111ms (Views: 81.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/todos/30" for ::1 at 2015-06-17 17:56:00 -0400
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yXK9Hc8klqKLLBnpbFegUOq3+3G9P1077xkMbsPiGtaDvbn7uSDbezcH74m+C8taGhM/X4G8SI/2T9cO6Ci8RQ==", "id"=>"30"}
+  [1m[35mTodo Load (0.5ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 30]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 37ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/todos" for ::1 at 2015-06-17 17:56:00 -0400
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.3ms)[0m  SELECT "todos".* FROM "todos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.3ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTodo Load (0.7ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 178ms (Views: 138.1ms | ActiveRecord: 1.5ms)

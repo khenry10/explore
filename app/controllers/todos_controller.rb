@@ -32,6 +32,10 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+  def show
+    
+  end
+
   def create
     @todo = current_user.todos.new(todo_params)
 
