@@ -1,0 +1,32 @@
+<%= form_for @todo, :html => {:class => 'form-horizontal'} do |f| %>		
+
+<div class='container', align='center'>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :Action, :class => 'control-label' %>
+      <div class="controls", size="50">
+        <%= f.text_field :Action, :class => 'text_field' %>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :Description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :Description, :class => 'text_field' %>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :Deadline, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :Deadline, :class => 'text_field' %>
+      </div>
+    </div>
+  
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', todos_path, :class => 'btn btn-danger' %>
+    </div>
+  </fieldset>
+</div>
+<% end %>
