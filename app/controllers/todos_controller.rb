@@ -17,6 +17,10 @@ class TodosController < ApplicationController
 
   end
 
+  def nil.each
+    puts "hey"
+  end
+
   def new
     @todo = Todo.new
   end
@@ -51,7 +55,7 @@ class TodosController < ApplicationController
 
   def complete
     @todo = Todo.find params[:id]
-    Todo.update(:Compelete => "true")
+    @odo.update(:Compelete => "true")
   end
 
   private  
