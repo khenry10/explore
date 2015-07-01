@@ -6,8 +6,10 @@
 	<thead>
 		<tr>
 			<th>Complete</th>
+			<th>Priority</th>
 			<th>To Do</th>
 			<th>Description</th>
+			<th>Time Estimate</th>
 			<th>Deadline</th>
 			<th>Actions</th>
 		</tr>
@@ -17,8 +19,10 @@
 
 		<tr>
 			<td><%= check_box_tag "todos_ids[]", todo.id %></td>
+			<td><%= todo.Priority %></td>
 			<td><%= todo.Action %></td>
 			<td><%= todo.Description %></td>
+			<td><%= todo.Time_Estimate %></td>
 			<td><%= todo.Deadline %></td>
 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
 			<%= link_to 'Delete', todo_path(todo), 

@@ -3,18 +3,9 @@ class TodosController < ApplicationController
 
   def index
     completed_todos_ids = params[:todos_ids]
-    p "COMPLETED TODOS IDS"
-    p completed_todos_ids
     Todo.complete(completed_todos_ids) 
-    p Todo.all
-    p "CURRENT USER TODOS"
-    p current_user.todos
-    p "CURRENT USER"
-    p current_user
     @todo = current_user.todos.where(Complete: nil)
-    p "UNCOMPLETED TODOS!!!!"
-    p @todo
-
+    
   end
 
   def nil.each
@@ -33,7 +24,7 @@ class TodosController < ApplicationController
   end
 
   def show
-    
+    @todo = Todo.order(:Priority)
   end
 
   def create
@@ -64,7 +55,7 @@ class TodosController < ApplicationController
 
   private  
   def todo_params
-   params.require('todo').permit(:Action, :Description, :Time_Estimate, :Deadline)
+   params.require('todo').permit(:Priority, :Action, :Description, :Time_Estimate, :Deadline)
   end
 
 end
