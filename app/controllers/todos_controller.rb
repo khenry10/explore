@@ -4,9 +4,17 @@ class TodosController < ApplicationController
   def index
     completed_todos_ids = params[:todos_ids]
     Todo.complete(completed_todos_ids) 
-    @todo = current_user.todos.where(Complete: nil)
+    @todo = current_user.todos.where(Complete: nil).order(:Priority)
     
   end
+
+  def show
+    @todo = Todo.order(:Priority)
+  end
+
+  #def time_format
+  #  @todo = Todo.Time_Estimate.strftime(%B, %e, %Y)
+  #end
 
   def nil.each
     puts "hey"
@@ -21,10 +29,6 @@ class TodosController < ApplicationController
     @todo.update todo_params
 
     redirect_to todos_path
-  end
-
-  def show
-    @todo = Todo.order(:Priority)
   end
 
   def create
