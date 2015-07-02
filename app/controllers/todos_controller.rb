@@ -12,9 +12,9 @@ class TodosController < ApplicationController
     @todo = Todo.order(:Priority)
   end
 
-  #def time_format
-  #  @todo = Todo.Time_Estimate.strftime(%B, %e, %Y)
-  #end
+  def time_format
+    @todo = Todo.Time_Estimate.to_formatted_s(:long)
+  end
 
   def nil.each
     puts "hey"

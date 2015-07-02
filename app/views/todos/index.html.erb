@@ -22,15 +22,16 @@
 			<td><%= todo.Priority %></td>
 			<td><%= todo.Action %></td>
 			<td><%= todo.Description %></td>
-			<td><%= todo.Time_Estimate %></td>
-			<td><%= todo.Deadline %></td>
+			<td><%= todo.Time_Estimate.strftime("%H:%M") unless todo.Time_Estimate.blank? %></td>
+			<td><%= todo.Deadline.strftime("%B %e, %Y") unless todo.Deadline.blank?%></td>
 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
 			<%= link_to 'Delete', todo_path(todo), 
 				method: :delete, 
 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
-
+			<p1><%= Todo.where(Complete: nil).sum(:Time_Estimate) %></p1>	
 		<%end%>
 		</tr>
+		
 	</body>
 	
 		<% end %>

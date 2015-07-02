@@ -35571,3 +35571,1937 @@ Processing by TodosController#index as HTML
   [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
   Rendered todos/index.html.erb within layouts/application (2.4ms)
 Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/new" for ::1 at 2015-07-01 15:41:53 -0400
+Processing by TodosController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered todos/_form.html.erb (2.8ms)
+  Rendered todos/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/44/edit" for ::1 at 2015-07-01 15:42:00 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mTodo Load (0.3ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 44]]
+  Rendered todos/_form.html.erb (2.4ms)
+  Rendered todos/edit.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/todos/44" for ::1 at 2015-07-01 15:42:04 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EG4O78W3SnOFIkeF/BxT1sDapb/ndGv4W1gmLWtLkv3raMdvmA0KwLGO8j9TXEKwJfdKNtwZcOIGGhovy+LpcQ==", "todo"=>{"Action"=>"Buy Groomsmen Gift", "Description"=>"", "Deadline"=>"2015-08-20", "Time_Estimate"=>"2000-01-01 02:00:00 UTC", "Priority"=>"1"}, "commit"=>"Update Todo", "id"=>"44"}
+  [1m[35mTodo Load (0.2ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 44]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "todos" SET "Priority" = ?, "updated_at" = ? WHERE "todos"."id" = ?  [["Priority", 1], ["updated_at", "2015-07-01 19:42:04.244085"], ["id", 44]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 12ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 15:42:04 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/44/edit" for ::1 at 2015-07-01 15:49:38 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mTodo Load (0.8ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 44]]
+  Rendered todos/_form.html.erb (6.1ms)
+  Rendered todos/edit.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 82ms (Views: 74.6ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/todos/44" for ::1 at 2015-07-01 15:49:42 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+TuwYBeyplvoDLVYSNACai5AC1rJqMDAcnPBRzBp5WACPXngSgjm6NygAOLnkBMMy23k0/LF29ovMf1FkMCe7A==", "todo"=>{"Action"=>"Buy Groomsmen Gift", "Description"=>"", "Deadline"=>"2015-08-20", "Time_Estimate"=>"2000-01-01 02:00:00 UTC", "Priority"=>"2"}, "commit"=>"Update Todo", "id"=>"44"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 44]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "todos" SET "Priority" = ?, "updated_at" = ? WHERE "todos"."id" = ?  [["Priority", 2], ["updated_at", "2015-07-01 19:49:42.032870"], ["id", 44]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 15:49:42 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:09:54 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.5ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 188ms (Views: 126.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:09:55 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:09:55 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:09:55 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:09:55 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:09:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:09:55 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:09:57 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:09:57 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:09:57 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:09:57 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:09:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:09:57 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:09:57 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:10:06 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.3ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 64ms (Views: 51.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:10:07 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:10:07 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:10:07 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:10:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:10:07 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:10:07 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:10:20 -0400
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/controllers/todos_controller.rb:16: unknown type of %string
+    @todo = Todo.Time_Estimate.strftime(%B%e%Y)
+                                           ^
+/Users/keithprifte/assembly/explore2/explore/app/controllers/todos_controller.rb:16: syntax error, unexpected end-of-input, expecting ')'
+    @todo = Todo.Time_Estimate.strftime(%B%e%Y)
+                                           ^):
+  app/controllers/todos_controller.rb:16: unknown type of %string
+  app/controllers/todos_controller.rb:16: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.8ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:13:36 -0400
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/controllers/todos_controller.rb:16: unknown type of %string
+    @todo = Time_Estimate.strftime(%B%e%Y)
+                                      ^
+/Users/keithprifte/assembly/explore2/explore/app/controllers/todos_controller.rb:16: syntax error, unexpected end-of-input, expecting ')'
+    @todo = Time_Estimate.strftime(%B%e%Y)
+                                      ^):
+  app/controllers/todos_controller.rb:16: unknown type of %string
+  app/controllers/todos_controller.rb:16: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (48.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (111.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:13:58 -0400
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/controllers/todos_controller.rb:16: unknown type of %string
+    @todo = Todo.Time_Estimate.strftime{%B%e%Y}
+                                           ^
+/Users/keithprifte/assembly/explore2/explore/app/controllers/todos_controller.rb:16: syntax error, unexpected end-of-input
+    @todo = Todo.Time_Estimate.strftime{%B%e%Y}
+                                           ^):
+  app/controllers/todos_controller.rb:16: unknown type of %string
+  app/controllers/todos_controller.rb:16: syntax error, unexpected end-of-input
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (46.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (98.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:16:22 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 69ms (Views: 55.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:16:22 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:16:22 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:16:22 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:16:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:16:22 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:16:22 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:16:46 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 91ms (Views: 75.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:16:46 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:16:46 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:16:46 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:16:46 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:16:46 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:16:46 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:22:11 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.4ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 73ms (Views: 60.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:22:11 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:22:11 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:22:11 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:22:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:22:11 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:22:11 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:22:14 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:22:14 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:22:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:22:14 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:22:14 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:22:14 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:22:14 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:23:03 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `to_formatted_s' for nil:NilClass):
+    23: 			<td><%= todo.Action %></td>
+    24: 			<td><%= todo.Description %></td>
+    25: 			<td><%= todo.Time_Estimate %></td>
+    26: 			<td><%= todo.Deadline.to_formatted_s(:long) %></td>
+    27: 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+  app/views/todos/index.html.erb:26:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294009438040'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294009438040'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294009438040'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (45.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (95.5ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:27:09 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    23: 			<td><%= todo.Action %></td>
+    24: 			<td><%= todo.Description %></td>
+    25: 			<td><%= todo.Time_Estimate %></td>
+    26: 			<td><%= todo.Deadline.strftime("%B %e, %Y") %></td>
+    27: 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+  app/views/todos/index.html.erb:26:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293986511640'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293986511640'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293986511640'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (39.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (88.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:30:15 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (no method name given):
+    23: 			<td><%= todo.Action %></td>
+    24: 			<td><%= todo.Description %></td>
+    25: 			<td><%= todo.Time_Estimate %></td>
+    26: 			<td><%= todo.Deadline.try.strftime("%B %e, %Y") %></td>
+    27: 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+  app/views/todos/index.html.erb:26:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294004057740'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294004057740'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294004057740'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (90.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:31:05 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (29.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `strftime' for #<#<Class:0x007fdd32ab0c90>:0x007fdd31b006d8>):
+    23: 			<td><%= todo.Action %></td>
+    24: 			<td><%= todo.Description %></td>
+    25: 			<td><%= todo.Time_Estimate %></td>
+    26: 			<td><%= todo.Deadline.try(strftime("%B %e, %Y")) %></td>
+    27: 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+  app/views/todos/index.html.erb:26:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294004095220'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294004095220'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294004095220'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (42.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.6ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:39:10 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:39:10 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:39:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:39:10 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:39:10 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:39:10 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:39:10 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:43:32 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `Time_Estimatestrftime' for #<Todo:0x007fdd32403460>):
+    22: 			<td><%= todo.Priority %></td>
+    23: 			<td><%= todo.Action %></td>
+    24: 			<td><%= todo.Description %></td>
+    25: 			<td><%= todo.Time_Estimatestrftime("%M") unless todo.Deadline.blank? %></td>
+    26: 			<td><%= todo.Deadline.strftime("%B %e, %Y") unless todo.Deadline.blank?%></td>
+    27: 			<td><%= link_to 'Edit', edit_todo_path(todo), :class => 'btn btn-mini btn-info' %> 
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+  app/views/todos/index.html.erb:25:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294003976780'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294003976780'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294003976780'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:44:29 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 74ms (Views: 71.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:44:29 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:44:29 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:44:29 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:44:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:44:29 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:44:29 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:44:50 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 113ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 16:44:50 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 16:44:50 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 16:44:50 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 16:44:50 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 16:44:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 16:44:50 -0400
+
+
+Started GET "/todos/43/edit" for ::1 at 2015-07-01 16:45:20 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mTodo Load (0.3ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 43]]
+  Rendered todos/_form.html.erb (4.3ms)
+  Rendered todos/edit.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/todos/43" for ::1 at 2015-07-01 16:45:24 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8SmTpjWT+K1bNceI738FrJZtgy3UkFTEsc9QJkIYnSAKL1omaCm4Hm+ZcjJAPxTKc0BspO/9T97sjWwk4rHmrA==", "todo"=>{"Action"=>"File Papers in Folders", "Description"=>"Need to go through the old folder", "Deadline"=>"", "Time_Estimate"=>"3 hours", "Priority"=>"6"}, "commit"=>"Update Todo", "id"=>"43"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "todos" SET "Time_Estimate" = ?, "updated_at" = ? WHERE "todos"."id" = ?  [["Time_Estimate", "2000-01-01 03:00:00.000000"], ["updated_at", "2015-07-01 20:45:24.769643"], ["id", 43]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:45:24 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/43/edit" for ::1 at 2015-07-01 16:45:27 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 43]]
+  Rendered todos/_form.html.erb (3.6ms)
+  Rendered todos/edit.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/todos/43" for ::1 at 2015-07-01 16:45:35 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QC1WtxSlopM9ol3keGcAHGLHoGNiAEIZbitXjt88Sq+7K583SR/iIAkO6F7XJxF6h+pP6lltWQMzaWuMf5UxIw==", "todo"=>{"Action"=>"File Papers in Folders", "Description"=>"Need to go through the old folder", "Deadline"=>"03:00", "Time_Estimate"=>"2000-01-01 03:00:00 UTC", "Priority"=>"6"}, "commit"=>"Update Todo", "id"=>"43"}
+  [1m[35mTodo Load (0.4ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:45:35 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/43/edit" for ::1 at 2015-07-01 16:45:38 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 43]]
+  Rendered todos/_form.html.erb (2.9ms)
+  Rendered todos/edit.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 52ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/todos/43" for ::1 at 2015-07-01 16:45:43 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xlv2X7Pp94h7wdzb2MEABKxsSXbZMFviQiu32eVxFpelXT/f7lO3O09taWF3gRFiSUGm/+JdQPgfaYvbRdhtGw==", "todo"=>{"Action"=>"File Papers in Folders", "Description"=>"Need to go through the old folder", "Deadline"=>"", "Time_Estimate"=>"2000-01-01 03:00:00 UTC", "Priority"=>"6"}, "commit"=>"Update Todo", "id"=>"43"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:45:43 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/43/edit" for ::1 at 2015-07-01 16:45:45 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 43]]
+  Rendered todos/_form.html.erb (3.9ms)
+  Rendered todos/edit.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/todos/43" for ::1 at 2015-07-01 16:45:53 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f1U4IY54zH1XNFGB4VtfClCAr80nkaAAngqheQlm4PqEU/Gh08KMzmOY5DtOG05sta1ARBz8uxrDSJ17qc+bdg==", "todo"=>{"Action"=>"File Papers in Folders", "Description"=>"Need to go through the old folder", "Deadline"=>"", "Time_Estimate"=>"03:00", "Priority"=>"6"}, "commit"=>"Update Todo", "id"=>"43"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:45:53 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/45/edit" for ::1 at 2015-07-01 16:45:57 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 45]]
+  Rendered todos/_form.html.erb (8.7ms)
+  Rendered todos/edit.html.erb within layouts/application (12.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/43/edit" for ::1 at 2015-07-01 16:51:47 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mTodo Load (0.5ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 43]]
+  Rendered todos/_form.html.erb (4.7ms)
+  Rendered todos/edit.html.erb within layouts/application (7.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 81ms (Views: 70.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/todos/43" for ::1 at 2015-07-01 16:51:58 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DaEgj7/HrqpDvAUfTByziVO/uZMoB4TEKqNE3ds58tv2p+kP4n3uGXcQsKXjXKLvtpJWGhNqn9534Xjfe5CJVw==", "todo"=>{"Action"=>"File Papers in Folders", "Description"=>"Need to go through the old folder", "Deadline"=>"", "Time_Estimate"=>" 3:00", "Priority"=>"6"}, "commit"=>"Update Todo", "id"=>"43"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:51:58 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/new" for ::1 at 2015-07-01 16:52:03 -0400
+Processing by TodosController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered todos/_form.html.erb (5.4ms)
+  Rendered todos/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 71ms (Views: 56.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/todos" for ::1 at 2015-07-01 16:52:27 -0400
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LOCXicFyooyRgXS5LE/bMYrBrGAlVEBhonx/lhVeXe3X5l4JnMjiP6UtwQODD8pXb+xD6R45W3v/PkOUtfcmYQ==", "todo"=>{"Action"=>"Find out about pre-ceremony drink", "Description"=>"Ask Mary if we can do Prifte Punch", "Deadline"=>"", "Time_Estimate"=>"00:30", "Priority"=>""}, "commit"=>"Create Todo"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "todos" ("Action", "Description", "Time_Estimate", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Action", "Find out about pre-ceremony drink"], ["Description", "Ask Mary if we can do Prifte Punch"], ["Time_Estimate", "2000-01-01 00:30:00.000000"], ["user_id", 1], ["created_at", "2015-07-01 20:52:27.236699"], ["updated_at", "2015-07-01 20:52:27.236699"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:52:27 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 54ms (Views: 50.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/47/edit" for ::1 at 2015-07-01 16:52:34 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered todos/_form.html.erb (4.6ms)
+  Rendered todos/edit.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/todos/47" for ::1 at 2015-07-01 16:52:43 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l1ax/fkjxFKSqn0FeYfXlbhGX/sbWYaPNAOzbsreEHRsUHh9pJmE4aYGyL/Wx8bzXWuwciA0nZVpQY9sandr+A==", "todo"=>{"Action"=>"Find out about pre-ceremony drink", "Description"=>"Ask Mary if we can do Prifte Punch", "Deadline"=>"", "Time_Estimate"=>"2000-01-01 00:30:00 UTC", "Priority"=>"3"}, "commit"=>"Update Todo", "id"=>"47"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "todos" SET "Priority" = ?, "updated_at" = ? WHERE "todos"."id" = ?[0m  [["Priority", 3], ["updated_at", "2015-07-01 20:52:43.917456"], ["id", 47]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:52:43 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/44/edit" for ::1 at 2015-07-01 16:53:29 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 44]]
+  Rendered todos/_form.html.erb (40.3ms)
+  Rendered todos/edit.html.erb within layouts/application (44.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 138ms (Views: 137.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/47/edit" for ::1 at 2015-07-01 16:53:35 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mTodo Load (0.4ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered todos/_form.html.erb (6.9ms)
+  Rendered todos/edit.html.erb within layouts/application (8.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 54ms (Views: 49.6ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/todos/47" for ::1 at 2015-07-01 16:53:40 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"407fj2klPUF43b16QnNd+ZMjHWIuDzmydZ7m5M0z0ZUYSBYPNJ998kxxCMDtM0yfdg7y6xViIqgo3NrmbZqqGQ==", "todo"=>{"Action"=>"Find out about pre-ceremony drink", "Description"=>"Ask Mary if we can do Prifte Punch", "Deadline"=>"", "Time_Estimate"=>"2000-01-01 02:00:00 UTC", "Priority"=>"3"}, "commit"=>"Update Todo", "id"=>"47"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "todos" SET "Time_Estimate" = ?, "updated_at" = ? WHERE "todos"."id" = ?[0m  [["Time_Estimate", "2000-01-01 02:00:00.000000"], ["updated_at", "2015-07-01 20:53:40.692936"], ["id", 47]]
+  [1m[35m (3.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 18ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 16:53:40 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 102ms (Views: 98.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todos/47/edit" for ::1 at 2015-07-01 17:05:48 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mTodo Load (1.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered todos/_form.html.erb (11.2ms)
+  Rendered todos/edit.html.erb within layouts/application (15.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 128ms (Views: 113.4ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/todos/47" for ::1 at 2015-07-01 17:05:56 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KnF+P68ahZZS4tFyCBFtgRypnj0WzEaEe3p064csmJ3Rd7e/8qDFJWZOZMinUXzn+YRxtC2hXZ4mOEjpJ4XjEQ==", "todo"=>{"Action"=>"Find out about pre-ceremony drink", "Description"=>"Ask Mary if we can do Prifte Punch", "Deadline"=>"August 20th, 2015", "Time_Estimate"=>"2000-01-01 02:00:00 UTC", "Priority"=>"3"}, "commit"=>"Update Todo", "id"=>"47"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "todos" SET "Deadline" = ?, "updated_at" = ? WHERE "todos"."id" = ?[0m  [["Deadline", "2015-08-20"], ["updated_at", "2015-07-01 21:05:56.016236"], ["id", 47]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:05:56 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/43/edit" for ::1 at 2015-07-01 17:06:04 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 43]]
+  Rendered todos/_form.html.erb (3.5ms)
+  Rendered todos/edit.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/todos/43" for ::1 at 2015-07-01 17:06:15 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KI4DhBlJWzIft+8gaGsTbVNZh5/JphT9TQeF0vqXvXXTiMoERPMbgSsbWprHKwILtnRoFvLLD+cQRbnQWj7G+Q==", "todo"=>{"Action"=>"File Papers in Folders", "Description"=>"Need to go through the old folder", "Deadline"=>"December 30th, 2015", "Time_Estimate"=>"2000-01-01 03:00:00 UTC", "Priority"=>"6"}, "commit"=>"Update Todo", "id"=>"43"}
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "todos" SET "Deadline" = ?, "updated_at" = ? WHERE "todos"."id" = ?[0m  [["Deadline", "2015-12-30"], ["updated_at", "2015-07-01 21:06:15.889322"], ["id", 43]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:06:15 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:06:46 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:06:46 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:06:46 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:06:46 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:06:46 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:06:46 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:06:46 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:11:04 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.4ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 166ms (Views: 142.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:11:04 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:11:04 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:11:04 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:11:04 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:11:04 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:11:04 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:14:12 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (64.3ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `todo' for #<#<Class:0x007fdd32ab0c90>:0x007fdd30433068>):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= todo.sum(Time_Estimate) %></td>
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293987102260'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293987102260'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (45.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (101.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:14:32 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Time_Estimate):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.sum(Time_Estimate) %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294018511680'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294018511680'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294018511680'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (91.0ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:14:48 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Time_Estimate):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.add(Time_Estimate) %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294014809300'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294014809300'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294014809300'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (49.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (106.4ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:15:40 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `sum' for 2000-01-01 00:30:00 UTC:Time):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.Time_Estimate.sum %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294003503580'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294003503580'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294003503580'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (46.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (101.5ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:15:47 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `add' for 2000-01-01 00:30:00 UTC:Time):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.Time_Estimate.add %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293970948160'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293970948160'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293970948160'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (48.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (103.6ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:16:35 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `inject' for 2000-01-01 00:30:00 UTC:Time):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.Time_Estimate.inject(:+) %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293986759200'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293986759200'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293986759200'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (51.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (103.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:17:56 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `Time_Estimates' for #<Todo:0x007fdd33af08f8>):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.Time_Estimates.inject(:+) %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293997902360'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293997902360'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293997902360'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.9ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:18:07 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `inject' for 2000-01-01 00:30:00 UTC:Time):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.Time_Estimate.inject(:+) %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293987317520'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293987317520'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293987317520'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (51.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (114.1ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:19:17 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `sum' for #<Todo:0x007fdd29b9ae20>):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<td><%= todo.sum(:Time_Estimate) %></td>
+    32: 		<%end%>
+    33: 		</tr>
+    34: 
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293934872120'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293934872120'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293934872120'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.0ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:19:31 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  [1m[36m (3.8ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 78ms (Views: 71.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:19:31 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:19:31 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:19:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:19:31 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:19:31 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:19:31 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:20:06 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos"
+  Rendered todos/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:20:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:20:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:20:06 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:20:06 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:20:06 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:20:06 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:20:35 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+...( Todo.sum(:Time_Estimate)where(complete = false) );@output_...
+...                               ^):
+  app/views/todos/index.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (44.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.6ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:20:49 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos"
+  Rendered todos/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `where' for 22000.0:Float):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.sum(:Time_Estimate).where(complete = false) %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293966621360'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293966621360'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (44.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.5ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:21:44 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `where' for 22000.0:Float):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.sum(:Time_Estimate).where(Complete: nil) %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293945792320'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293945792320'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (69.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (133.8ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:21:49 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered todos/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+...( Todo.sum(:Time_Estimate)where(Complete: nil) );@output_buf...
+...                               ^):
+  app/views/todos/index.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (58.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (130.1ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:22:24 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:36: syntax error, unexpected '<', expecting ')'
+	</body>
+	 ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:46: unknown regexp options - pa
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:47: syntax error, unexpected '<'
+        <span class="icon-bar"></span>
+         ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:47: syntax error, unexpected '<'
+        <span class="icon-bar"></span>
+                                ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:48: unknown regexp options - pa
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:49: syntax error, unexpected '<'
+        <span class="icon-bar"></span>
+         ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:49: syntax error, unexpected '<'
+        <span class="icon-bar"></span>
+                                ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:50: unknown regexp options - btt
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:52: syntax error, unexpected '<'
+    </div>
+     ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:57: unknown regexp option - l
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:58: syntax error, unexpected '<'
+		<li>'.freeze;@output_buffer.ap...
+		 ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:60: unknown regexp option - l
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:61: syntax error, unexpected '<'
+    </div><!-- /.navbar-collapse -->
+     ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:61: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+    </div><!-- /.navbar-collapse -->
+                                  ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:62: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+  </div><!-- /.container-fluid -->
+                                ^
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:63: unterminated regexp meets end of file):
+  app/views/todos/index.html.erb:36: syntax error, unexpected '<', expecting ')'
+  app/views/todos/index.html.erb:46: unknown regexp options - pa
+  app/views/todos/index.html.erb:47: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:47: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:48: unknown regexp options - pa
+  app/views/todos/index.html.erb:49: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:49: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:50: unknown regexp options - btt
+  app/views/todos/index.html.erb:52: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:57: unknown regexp option - l
+  app/views/todos/index.html.erb:58: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:60: unknown regexp option - l
+  app/views/todos/index.html.erb:61: syntax error, unexpected '<'
+  app/views/todos/index.html.erb:61: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+  app/views/todos/index.html.erb:62: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+  app/views/todos/index.html.erb:63: unterminated regexp meets end of file
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (56.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (137.4ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:22:38 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos"
+  Rendered todos/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:22:38 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:22:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:22:38 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:22:38 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:22:38 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:22:38 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:23:31 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  Rendered todos/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:23:31 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:23:31 -0400
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:23:31 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:23:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:23:31 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:23:32 -0400
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:24:06 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  Rendered todos/index.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `strftime' for 10000.0:Float):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294003172920'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294003172920'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (59.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (133.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:25:15 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (34.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `todo' for #<#<Class:0x007fdd32ab0c90>:0x007fdd2e0cbe90>):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless todo.Deadline.blank? %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293968494080'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293968494080'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (48.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (103.6ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:25:39 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (20.6ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `todo' for #<#<Class:0x007fdd32ab0c90>:0x007fdd338b3c98>):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless todo.Time_Estimate.blank? %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294014628720'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294014628720'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (97.7ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:25:53 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `Time_Estimate' for #<Class:0x007fdd31a226d0>):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless Todo.Time_Estimate.blank? %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294009254560'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294009254560'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (91.9ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:26:15 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `Time_Estimate' for #<Todo::ActiveRecord_AssociationRelation:0x007fdd329705b0>):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless @todo.Time_Estimate.blank? %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294006598120'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294006598120'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (46.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (108.3ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:27:05 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (32.7ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `todo' for #<#<Class:0x007fdd32ab0c90>:0x007fdd2a75b700>):
+    31: 
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		<td><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless todo.Time_Estimate.float? %></td>	
+    35: 	</body>
+    36: 	
+    37: 		<% end %>
+  app/views/todos/index.html.erb:34:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293938422840'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293938422840'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (56.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (116.1ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:27:19 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered todos/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:64: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/keithprifte/assembly/explore2/explore/app/views/todos/index.html.erb:66: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/todos/index.html.erb:64: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/todos/index.html.erb:66: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (55.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (110.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:27:57 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `float?' for 2000-01-01 00:30:00 UTC:Time):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<p1><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless todo.Time_Estimate.float? %></p1>	
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70293944615140'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70293944615140'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70293944615140'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.1ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (97.8ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:28:12 -0400
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  Rendered todos/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `strftime' for 10000.0:Float):
+    28: 			<%= link_to 'Delete', todo_path(todo), 
+    29: 				method: :delete, 
+    30: 				data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %></td>
+    31: 			<p1><%= Todo.where(Complete: nil).sum(:Time_Estimate).strftime("%H:%M") unless todo.Time_Estimate.blank? %></p1>	
+    32: 		<%end%>
+    33: 		</tr>
+    34: 		
+  app/views/todos/index.html.erb:31:in `block (2 levels) in _app_views_todos_index_html_erb___4063705319785341594_70294019446740'
+  app/views/todos/index.html.erb:18:in `block in _app_views_todos_index_html_erb___4063705319785341594_70294019446740'
+  app/views/todos/index.html.erb:1:in `_app_views_todos_index_html_erb___4063705319785341594_70294019446740'
+
+
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.8ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/keithprifte/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (133.4ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-01 17:28:34 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  Rendered todos/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/todo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-01 17:28:34 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-01 17:28:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-07-01 17:28:34 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-3925a96e29ebacce767f7e280962585dfb9c0a952852429edaadd409dde05734.css?body=1" for ::1 at 2015-07-01 17:28:34 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-01 17:28:34 -0400
+
+
+Started GET "/assets/application.self-5b7ec64edd8581fcd3e8c561c03c34d74339e66455a64a376479686dec734338.js?body=1" for ::1 at 2015-07-01 17:28:34 -0400
+
+
+Started GET "/todos/new" for ::1 at 2015-07-02 09:29:17 -0400
+Processing by TodosController#new as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered todos/_form.html.erb (34.3ms)
+  Rendered todos/new.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 388ms (Views: 353.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/todos" for ::1 at 2015-07-02 09:29:47 -0400
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+6277xKIZbzBP57YE3urc7aTM870QurwHfA4mGUuyRcAq3JvTzIlD/WTK2K8O7oVU77cR88v8epAsgSaxYeymw==", "todo"=>{"Action"=>"Wedding Transporation", "Description"=>"Look into Chariots for Hire", "Deadline"=>"8/20/15", "Time_Estimate"=>"02:00", "Priority"=>"7"}, "commit"=>"Create Todo"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "todos" ("Priority", "Action", "Description", "Time_Estimate", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["Priority", 7], ["Action", "Wedding Transporation"], ["Description", "Look into Chariots for Hire"], ["Time_Estimate", "2000-01-01 02:00:00.000000"], ["user_id", 1], ["created_at", "2015-07-02 13:29:47.791058"], ["updated_at", "2015-07-02 13:29:47.791058"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 20ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-02 09:29:47 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 66ms (Views: 62.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todos/48/edit" for ::1 at 2015-07-02 09:29:53 -0400
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 48]]
+  Rendered todos/_form.html.erb (4.2ms)
+  Rendered todos/edit.html.erb within layouts/application (5.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/todos/48" for ::1 at 2015-07-02 09:30:00 -0400
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RUIuPDdxmSL7kAO4RfrZ2fWbjmRWHJ/UEc9jcBANBbq+ROe8asvZkc88tgLqusi/ELZh7W1xhM5MjV9ysKR+Ng==", "todo"=>{"Action"=>"Wedding Transporation", "Description"=>"Look into Chariots for Hire", "Deadline"=>"August 20th, 2015", "Time_Estimate"=>"2000-01-01 02:00:00 UTC", "Priority"=>"7"}, "commit"=>"Update Todo", "id"=>"48"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", 48]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "todos" SET "Deadline" = ?, "updated_at" = ? WHERE "todos"."id" = ?[0m  [["Deadline", "2015-08-20"], ["updated_at", "2015-07-02 13:30:00.349662"], ["id", 48]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/todos" for ::1 at 2015-07-02 09:30:00 -0400
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."Complete" IS NULL  ORDER BY "todos"."Priority" ASC  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("todos"."Time_Estimate") FROM "todos" WHERE "todos"."Complete" IS NULL
+  Rendered todos/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 0.4ms)
